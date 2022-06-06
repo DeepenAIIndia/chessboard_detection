@@ -17,8 +17,16 @@ add_library(${PROJECT_NAME} SHARED
     src/ChessboardCorner.h
     src/ChessboardQuad.h
     src/Spline.h
+    src/chessBoardCornersDetector.cpp
 )
+add_subdirectory(pybind11)
+pybind11_add_module(chessBoardCornersDetector_pybind src/chessBoardCornersDetector_pybind.cpp)
 
 add_executable(test_chessboard src/test_chessboard.cpp)
+add_executable(chessBoardCornersDetector src/chessBoardCornersDetector.cpp)
 target_link_libraries(test_chessboard ${PROJECT_NAME})
 target_link_libraries(test_chessboard ${OpenCV_LIBS})
+target_link_libraries(chessBoardCornersDetector ${PROJECT_NAME})
+target_link_libraries(chessBoardCornersDetector ${OpenCV_LIBS})
+target_link_libraries(chessBoardCornersDetector_pybind PUBLIC ${PROJECT_NAME})
+target_compile_definitions(chessBoardCornersDetector_pybind PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
