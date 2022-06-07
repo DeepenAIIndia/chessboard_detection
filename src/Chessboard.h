@@ -11,7 +11,7 @@ class Result{
         bool flag;
         std::vector<cv::Point2f> corner;
 };
-Result chessBoardCornersDetector(std::string image_path, int board_width, int board_height);
+Result chessBoardCornersDetector(std::string image_path, int board_width, int board_height, const bool verbose);
 
 namespace CornerDetection
 {
