@@ -14,7 +14,7 @@ PYBIND11_MODULE(chessBoardCornersDetector_pybind, module) {
     module.def("test_bindings",&TestBinding,"Test Binding Function");
     module.def("chessBoardCornersDetector", &chessBoardCornersDetector, 
     "chessBoardCornersDetector", 
-     py::arg("image_path"), py::arg("board_width"), py::arg("board_height"));
+     py::arg("image_path"), py::arg("board_width"), py::arg("board_height"), py::arg("verbose") = false);
 }
 
 
