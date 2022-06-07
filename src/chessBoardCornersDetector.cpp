@@ -10,7 +10,7 @@ using namespace cv;
 
 cv::Size boardSize;
 
-Result chessBoardCornersDetector(std::string image_path, int board_width, int board_height){
+Result chessBoardCornersDetector(std::string image_path, int board_width, int board_height,const bool verbose){
     
     // cout<<"function called"<<std::endl;
     cv::Mat image = cv::imread(image_path);
