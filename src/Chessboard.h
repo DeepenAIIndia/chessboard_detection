@@ -3,6 +3,15 @@
 
 #include <boost/shared_ptr.hpp>
 #include <opencv2/core/core.hpp>
+#include <string>
+
+
+class Result{
+    public:
+        bool flag;
+        std::vector<cv::Point2f> corner;
+};
+Result chessBoardCornersDetector(std::string image_path, int board_width, int board_height);
 
 namespace CornerDetection
 {
