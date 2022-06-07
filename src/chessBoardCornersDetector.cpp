@@ -53,7 +53,7 @@ int main(int argc,char** argv){
 
     cout<<"MAIN function complied "<<boardSize.width<<" "<<boardSize.height<<" IMAGE PATH: "<<image_path<<std::endl;
 
-    Result result = chessBoardCornersDetector(image_path,boardSize.width,boardSize.height);
+    Result result = chessBoardCornersDetector(image_path,boardSize.width,boardSize.height,false);
 
     return 0;
 
