@@ -22,11 +22,11 @@ add_library(chessboard_lib STATIC
 set_target_properties(chessboard_lib PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 add_subdirectory(pybind11)
-pybind11_add_module(chessBoardCornersDetector_pybind src/chessBoardCornersDetector_pybind.cpp)
+pybind11_add_module(pyChessBoardDetector src/chessBoardCornersDetector_pybind.cpp)
 
 add_executable(chessBoardCornersDetector src/chessBoardCornersDetector.cpp)
 target_link_libraries(chessBoardCornersDetector chessboard_lib)
 target_link_libraries(chessBoardCornersDetector ${OpenCV_LIBS})
-target_link_libraries(chessBoardCornersDetector_pybind PRIVATE chessboard_lib)
-target_link_libraries(chessBoardCornersDetector_pybind PUBLIC ${OpenCV_LIBS})
-target_compile_definitions(chessBoardCornersDetector_pybind PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
+target_link_libraries(pyChessBoardDetector PRIVATE chessboard_lib)
+target_link_libraries(pyChessBoardDetector PUBLIC ${OpenCV_LIBS})
+target_compile_definitions(pyChessBoardDetector PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
