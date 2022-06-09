@@ -28,8 +28,10 @@ list<list<tuple<float,float>>> getChessBoardCorners(list<std::string> images_pat
 
         if(ret){
                 corners_detected = chessboard.getCorners();
-                cout << "# INFO: Detected chessboard in image " << *it1 << std::endl;
-
+                if(verbose){
+                    cout << "# INFO: Detected chessboard in image " << *it1 << std::endl;
+                }
+                
             int i=0;
             auto it = corners_list.begin();
             for(it = corners_list.begin();it!=corners_list.end();it++){
@@ -42,7 +44,9 @@ list<list<tuple<float,float>>> getChessBoardCorners(list<std::string> images_pat
         }
         else
         {
-            cout << "# ERROR: Did not detect chessboard in image " << *it1 << std::endl;
+            if(verbose){
+                cout << "# ERROR: Did not detect chessboard in image " << *it1 << std::endl;
+            }
         }
     }
     return ans;
