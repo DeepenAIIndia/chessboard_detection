@@ -7,15 +7,7 @@
 #include <tuple>
 #include <list>
 
-
-// class Result{
-//     public:
-//         bool flag;
-//         std::vector<cv::Point2f> corner;
-// };
-
 std::list<std::tuple<float,float>> getChessBoardCorners(std::string image_path, int board_width, int board_height, const bool verbose);
-
 
 namespace CornerDetection
 {
