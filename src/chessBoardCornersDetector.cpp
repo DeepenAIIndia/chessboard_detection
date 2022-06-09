@@ -12,9 +12,9 @@ using namespace cv;
 
 
 list<list<tuple<float,float>>> getChessBoardCorners(list<std::string> images_path, int board_width, int board_height,const bool verbose){
-    list<list<tuple<float,float>>> ans;
+    list<list<tuple<float,float>>> corners_detected_list;
+    cv::Size boardSize;
     for(auto it1=images_path.begin();it1!=images_path.end();it1++){
-        cv::Size boardSize;
         cv::Mat image = cv::imread(*it1);
         boardSize.width = board_width;
         boardSize.height = board_height;
@@ -40,7 +40,7 @@ list<list<tuple<float,float>>> getChessBoardCorners(list<std::string> images_pat
                 i++;
             }
 
-            ans.push_back(corners_list);
+            corners_detected_list.push_back(corners_list);
         }
         else
         {
