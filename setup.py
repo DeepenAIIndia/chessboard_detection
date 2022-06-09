@@ -125,9 +125,9 @@ class CMakeBuild(build_ext):
 setup(
     name="pyChessBoardDetector",
     version="1.0.0",
-    description="pybind11 plugin for calculating trajectory of IMU using IMU readings.",
+    description="pybind11 plugin for corner detection in checkerboard.",
     long_description="",
-    ext_modules=[CMakeExtension("chessBoardCornersDetector_pybind")],
+    ext_modules=[CMakeExtension("pyChessBoardDetector")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
     python_requires=">=3.6",
