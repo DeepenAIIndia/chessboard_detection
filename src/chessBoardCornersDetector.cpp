@@ -38,9 +38,6 @@ list<tuple<float,float>> getChessBoardCorners(std::string image_path, int board_
             i++;
         }
 
-        cv::Mat sketch;
-        chessboard.getSketch().copyTo(sketch);
-        cv::imwrite(image_path.replace(image_path.end()-4, image_path.end(), "_sketch.jpg"), sketch);
     }
     else
     {
