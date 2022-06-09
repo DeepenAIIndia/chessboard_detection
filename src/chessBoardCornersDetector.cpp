@@ -10,11 +10,9 @@ using namespace std;
 using namespace cv;
 
 
-cv::Size boardSize;
-
-
 list<tuple<float,float>> getChessBoardCorners(std::string image_path, int board_width, int board_height,const bool verbose){
     
+    cv::Size boardSize;
     cv::Mat image = cv::imread(image_path);
     boardSize.width = board_width;
     boardSize.height = board_height;
@@ -44,19 +42,5 @@ list<tuple<float,float>> getChessBoardCorners(std::string image_path, int board_
         cout << "# ERROR: Did not detect chessboard in image " << image_path << std::endl;
     }
     return corners_list;
-
-}
-
-
-
-int main(int argc,char** argv){
-
-    string image_path = argv[1];
-    boardSize.width = stoi(argv[2]);
-    boardSize.height = stoi(argv[3]);
-
-    list<tuple<float,float>> result = getChessBoardCorners(image_path,boardSize.width,boardSize.height,false);
-
-    return 0;
 
 }
