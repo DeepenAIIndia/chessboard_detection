@@ -7,7 +7,7 @@
 #include <tuple>
 #include <list>
 
-std::list<std::tuple<float,float>> getChessBoardCorners(std::string image_path, int board_width, int board_height, const bool verbose);
+std::list<std::list<std::tuple<float,float>>> getChessBoardCorners(std::list<std::string> images_path, int board_width, int board_height,const bool verbose);
 
 namespace CornerDetection
 {
