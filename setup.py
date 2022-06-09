@@ -56,8 +56,8 @@ class CMakeBuild(build_ext):
         # In this example, we pass in the version to C++. You might not need to.
         cmake_args += [f"-DEXAMPLE_VERSION_INFO={self.distribution.get_version()}"]
         
-        cmake_args += ["-DCMAKE_BUILD_WITH_INSTALL_RPATH=TRUE"]
-        cmake_args += ["-DCMAKE_INSTALL_RPATH={}".format("$ORIGIN")]
+        # cmake_args += ["-DCMAKE_BUILD_WITH_INSTALL_RPATH=TRUE"]
+        # cmake_args += ["-DCMAKE_INSTALL_RPATH={}".format("$ORIGIN")]
         # Pile all .so in one place and use $ORIGIN as RPATH
         if self.compiler.compiler_type != "msvc":
             # Using Ninja-build since it a) is available as a wheel and b)
@@ -123,7 +123,7 @@ class CMakeBuild(build_ext):
 # The information here can also be placed in setup.cfg - better separation of
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
-    name="chessBoardCornersDetector_pybind",
+    name="pyChessBoardDetector",
     version="1.0.0",
     description="pybind11 plugin for calculating trajectory of IMU using IMU readings.",
     long_description="",
