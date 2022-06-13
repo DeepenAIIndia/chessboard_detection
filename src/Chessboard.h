@@ -4,14 +4,12 @@
 #include <boost/shared_ptr.hpp>
 #include <opencv2/core/core.hpp>
 #include <string>
+#include <tuple>
+#include <list>
+#include <unordered_map>
 
+std::unordered_map<std::string,std::list<std::tuple<float,float>>> getChessBoardCorners(std::list<std::string> images_path, int board_width, int board_height,const bool verbose);
 
-class Result{
-    public:
-        bool flag;
-        std::vector<cv::Point2f> corner;
-};
-Result chessBoardCornersDetector(std::string image_path, int board_width, int board_height, const bool verbose);
 
 namespace CornerDetection
 {
