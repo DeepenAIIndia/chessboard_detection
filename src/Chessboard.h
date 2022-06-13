@@ -6,8 +6,9 @@
 #include <string>
 #include <tuple>
 #include <list>
+#include <unordered_map>
 
-std::list<std::list<std::tuple<float,float>>> getChessBoardCorners(std::list<std::string> images_path, int board_width, int board_height,const bool verbose);
+std::unordered_map<std::string,std::list<std::tuple<float,float>>> getChessBoardCorners(std::list<std::string> images_path, int board_width, int board_height,const bool verbose);
 
 namespace CornerDetection
 {
