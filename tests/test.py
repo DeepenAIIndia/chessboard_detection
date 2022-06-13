@@ -3,6 +3,7 @@ import pyChessBoardDetector
 
 def test_binding():
     if(pyChessBoardDetector.test_bindings()== "Hello Binders!"):
+        assert pyChessBoardDetector.test_bindings() == "Hello Binders!"
         print("Sucess")
     else:
         print("Fail")
@@ -19,6 +20,8 @@ def test_cornerdetector():
     # print("File Path:",image_path)
     output = pyChessBoardDetector.get_chessboard_corners(images_path,9,7,False)
     # print("output= ",output)
+    assert len(output) == 2
+
 
 
 
