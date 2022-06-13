@@ -49,5 +49,5 @@ list<list<tuple<float,float>>> getChessBoardCorners(list<std::string> images_pat
             }
         }
     }
-    return ans;
+    return corners_detected_list;
 }
