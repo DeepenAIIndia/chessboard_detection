@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include <vector>
 #include <tuple>
 #include <fstream>
 #include <opencv2/opencv.hpp>
@@ -53,4 +52,3 @@ unordered_map<string,list<tuple<float,float>>> getChessBoardCorners(list<std::st
     }
     return corners_detected_list;
 }
-

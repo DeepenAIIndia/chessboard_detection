@@ -23,8 +23,6 @@ PYBIND11_MODULE(pyChessBoardDetector, module) {
 
     module.def("test_bindings",&TestBinding,"Test Binding Function");
     module.def("get_chessboard_corners", &getChessBoardCorners, 
-    "chessBoardCornersDetector", 
+    "Checkerboard corner detection function", 
      py::arg("images_path"), py::arg("board_width"), py::arg("board_height"), py::arg("verbose") = false);
 }
-
-

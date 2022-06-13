@@ -10,6 +10,7 @@ def test_binding():
 
 
 def test_cornerdetector():
+    print("Sucess From cornerdetector")
     images_path = []
     file_path = os.path.dirname(os.path.realpath(__file__))
     image_path = os.path.join(file_path,"IMG_3715.jpg")
