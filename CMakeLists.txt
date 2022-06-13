@@ -25,7 +25,6 @@ add_subdirectory(pybind11)
 pybind11_add_module(pyChessBoardDetector src/chessBoardCornersDetector_pybind.cpp)
 
 add_executable(chessBoardCornersDetector src/chessBoardCornersDetector.cpp)
-#add_executable(chessBoardCornersDetector_pybind src/chessBoardCornersDetector_pybind.cpp)
 target_link_libraries(chessBoardCornersDetector chessboard_lib)
 target_link_libraries(chessBoardCornersDetector ${OpenCV_LIBS})
 target_link_libraries(pyChessBoardDetector PRIVATE chessboard_lib)
