@@ -1,7 +1,7 @@
 # Corner detection for chessboaard/checkerboard
 Corner detection code adapted from https://github.com/hengli/camodocal
 
-## Building the code
+## Building the code (C++)
 ```
 mkdir build
 cd build
@@ -9,7 +9,7 @@ cmake ..
 make
 ```
 
-## Running the code
+## Running the code (C++)
 ```
 ./test_chessboard <directory_path>
 ```
@@ -22,3 +22,8 @@ OR
 
 python image_paths.py --directory_path <directory_path> --extension <extension>
 ```
+## Installing the package as python package
+```
+pip install git+https://github.com/sandeepnmenon/chessboard_detection.git
+```
+See ```tests/test.py``` for python module usage
