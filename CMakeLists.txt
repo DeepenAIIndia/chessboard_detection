@@ -24,6 +24,7 @@ set_target_properties(chessboard_lib PROPERTIES POSITION_INDEPENDENT_CODE ON)
 add_subdirectory(pybind11)
 pybind11_add_module(pyChessBoardDetector src/chessBoardCornersDetector_pybind.cpp)
 
+add_executable(test_chessboard src/test_chessboard.cpp)
 add_executable(chessBoardCornersDetector src/chessBoardCornersDetector.cpp)
 target_link_libraries(chessBoardCornersDetector chessboard_lib)
 target_link_libraries(chessBoardCornersDetector ${OpenCV_LIBS})
