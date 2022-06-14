@@ -2,12 +2,8 @@ import os
 import pyChessBoardDetector
 
 def test_binding():
-    if(pyChessBoardDetector.test_bindings()== "Hello Binders!"):
-        assert pyChessBoardDetector.test_bindings() == "Hello Binders!"
-        print("Sucess")
-    else:
-        print("Fail")
-
+    assert pyChessBoardDetector.test_bindings() == "Hello Binders!","Binding Test Failed"
+    print("Binding Test Successful")
 
 def test_cornerdetector():
     images_path = []
@@ -18,19 +14,15 @@ def test_cornerdetector():
     images_path.append(image_path)
     image_path = os.path.join(file_path,"IMG_3135.jpg")
     images_path.append(image_path)
-    output = pyChessBoardDetector.get_chessboard_corners(images_path,9,7,False)
-    image_path_list = []
-    output_image_key_list = []
-    for path in sorted(images_path):
-        image_path_list.append(path)
-    
-    for i in sorted(output):
-        output_image_key_list.append(i)
+    output = pyChessBoardDetector.get_chessboard_corners(images_path,9,7,False)  #example Board Height = 9, Board Width = 7
 
-    for j in range(0,len(image_path_list)):
-        assert image_path_list[j] == output_image_key_list[j]
+    for image_path in images_path:
+        assert image_path in output, f"{image_path} not found in output"
 
-    print("Sucess From cornerdetector")
+    for key in output:
+        assert len(output[key]) == 63, "Output length is mismatched with total number of corners in image" # 63 ~ 9(Board Height)*7(Board Width)
+
+    print("Corner Detection Sucessful")
     
 if __name__ == "__main__":
     test_binding()
