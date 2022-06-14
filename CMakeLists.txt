@@ -30,4 +30,6 @@ target_link_libraries(test_chessboard chessboard_lib)
 target_link_libraries(test_chessboard ${OpenCV_LIBS})
 target_link_libraries(pyChessBoardDetector PRIVATE chessboard_lib)
 target_link_libraries(pyChessBoardDetector PUBLIC ${OpenCV_LIBS})
+# EXAMPLE_VERSION_INFO is defined by setup.py and passed into the C++ code as a
+# define (VERSION_INFO) here.
 target_compile_definitions(pyChessBoardDetector PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})

@@ -10,6 +10,10 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include "Chessboard.h"
+
+#define STRINGIFY(x) #x
+#define MACRO_STRINGIFY(x) STRINGIFY(x)
+
 namespace py = pybind11;
 using namespace std;
 using namespace cv;
@@ -25,4 +29,10 @@ PYBIND11_MODULE(pyChessBoardDetector, module) {
     module.def("get_chessboard_corners", &getChessBoardCorners, 
     "Checkerboard corner detection function", 
      py::arg("images_path"), py::arg("board_width"), py::arg("board_height"), py::arg("verbose") = false);
+
+#ifdef VERSION_INFO
+    module.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);
+#else
+    module.attr("__version__") = "dev";
+#endif
 }
