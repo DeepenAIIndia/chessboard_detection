@@ -53,17 +53,3 @@ unordered_map<string,list<tuple<float,float>>> getChessBoardCorners(list<std::st
     return corners_detected_list;
 }
 
-int main(int argc,char** argv){
-
-    cv::Size boardSize;
-    string image_path = argv[1];
-    list<string> images_path;
-    images_path.push_back(image_path);
-    boardSize.width = stoi(argv[2]);
-    boardSize.height = stoi(argv[3]);
-
-    unordered_map<string,list<tuple<float,float>>> result = getChessBoardCorners(images_path,boardSize.width,boardSize.height,false);
-
-    return 0;
-
-}
