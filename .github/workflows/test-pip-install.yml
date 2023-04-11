@@ -34,3 +34,6 @@ jobs:
     - name: Install with pip
       run: |
         pip install .
+    - name: Run test file
+      run: |
+        python tests/test.py || exit 1
