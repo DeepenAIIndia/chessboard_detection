@@ -53,6 +53,7 @@ def test_version():
 
 
 if __name__ == "__main__":
-    test_binding()
-    test_cornerdetector()
-    test_version()
+    # test_binding()
+    # test_cornerdetector()
+    # test_version()
+    exit(1)
