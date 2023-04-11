@@ -18,9 +18,9 @@ jobs:
       run: |
         git submodule init
         git submodule update
-    - name: Install OpenCV
+    - name: Install OpenCV and Boost
       run: |
-        sudo apt install -y libopencv-dev
+        sudo apt install -y libopencv-dev libboost-all-dev
     - name: Build C++ files
       run: |
         mkdir build
