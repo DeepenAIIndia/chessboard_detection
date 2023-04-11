@@ -1,0 +1,39 @@
+name: Test Package Install with Pip
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 5
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Load submodules
+      run: |
+        git submodule init
+        git submodule update
+    - name: Install OpenCV and Boost
+      run: |
+        sudo apt install -y libopencv-dev libboost-all-dev
+    - name: Build C++ files
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.8'
+    - name: Install with pip
+      run: |
+        pip install .
+    - name: Run test file
+      run: |
+        python tests/test.py || exit 1
